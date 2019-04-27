@@ -1,0 +1,253 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using Tpa3.Models;
+
+namespace Tpa3.ViewModel
+{
+    public class SecondViewModel : INotifyPropertyChanged 
+    {
+       // Assembly assembly;
+        AssemblyMetadata AMetadata;
+        List<String> _lista = new List<string>();
+       static string ChosenFileName;
+      static  Microsoft.Win32.OpenFileDialog dlg;
+        static Microsoft.Win32.SaveFileDialog save;
+        static Microsoft.Win32.OpenFileDialog load;
+        public static Microsoft.Win32.OpenFileDialog Dlg
+        {
+            get { return dlg; }
+            set { dlg = value; }
+        }
+        public static Microsoft.Win32.SaveFileDialog Savedlg
+        {
+            get { return save; }
+            set { save = value; }
+        }
+        public static Microsoft.Win32.OpenFileDialog Loaddlg
+        {
+            get { return load; }
+            set { load = value; }
+        }
+        public List<String> Lista
+        {
+            get { return _lista; }
+            set { _lista = value;
+                OnPropertyChanged("lista");
+            }
+        }
+        Json j;
+
+      static Logger logger = new Logger();
+        public SecondViewModel()
+        {
+            j = new Json();
+            dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.FileName = "Document"; // Default file name
+            dlg.DefaultExt = ".dll"; // Default file extension
+            dlg.Filter = "Dll documents (.dll)|*.dll"; // Filter files by extensio
+            save= new Microsoft.Win32.SaveFileDialog();
+            save.FileName = "Document1"; // Default file name
+            save.DefaultExt = ".xml"; // Default file extension
+            save.Filter = "xml DD  (xml)|*.xml"; // Filter files by extensio
+            load = new Microsoft.Win32.OpenFileDialog();
+            load.FileName = "Document2"; // Default file name
+            load.DefaultExt = ".xml"; // Default file extension
+            load.Filter = "xml documents (.xml)|*.xml"; // Filter files by extensio
+
+
+        }
+        
+      
+        public void Go(string File)
+        {
+            try
+            {
+                logger.Trace("Start of SecondViewModel Constructor");
+                AMetadata = new AssemblyMetadata(Assembly.LoadFile(File));
+                foreach (NamespaceMeta d in AMetadata.m_Namespaces)
+                {
+                    Lista2(d, GreatParent[0]);
+                }
+
+               // Save(" ");
+                //Load(" ");
+            }
+            catch (Exception i)
+            {
+                logger.Error(i.ToString());
+            }
+        }
+        public void Save()
+        {
+            String file;
+            Nullable<bool> result = Savedlg.ShowDialog();
+            if (result==true)
+            {
+                file = Savedlg.FileName;
+                j.Serialize(file, GreatParent[0]);
+            }
+           
+        }
+        TreeNode d = new TreeNode();
+        public void Load()
+        {
+            String file;
+            Nullable<bool> result = Loaddlg.ShowDialog();
+            if (result == true)
+            {
+                file = Loaddlg.FileName;
+                d = j.Deserialization(file);
+            }
+
+           
+          //  j.Serialize(@"E:\MyProjects\Tpa3\Tpa3\DeserialTest.xml", d);
+
+        }
+
+        TreeView tre = new TreeView();
+        ObservableCollection<TreeNode> _GreatParent;
+        public ObservableCollection<TreeNode> GreatParent
+        {
+            get { return _GreatParent; }
+           set {
+                _GreatParent = value;
+                OnPropertyChanged("GreatParent");
+            }
+        }
+        
+        public List<String> Lista2(Object obj,TreeNode node)
+        {
+          
+            List<String> d = new List<String>();
+            if (obj != null)
+            {
+                TreeNode k = new TreeNode();
+                Type p = obj.GetType();
+                FieldInfo[] s = p.GetFields();
+                String str = "     Start          " + obj.ToString();
+                String strk ="     Koniec        " + obj.ToString();
+                
+                Lista.Add(str);
+                foreach (var prop in obj.GetType().GetProperties())
+                {
+                  
+                    Lista.Add(prop.ToString());
+                    if (prop.GetValue(obj) != null)
+                    {
+
+                         Lista.Add(prop.GetValue(obj).ToString());
+                        TreeNode c = new TreeNode(prop.GetValue(obj).ToString(), prop.ToString());
+                       node.Childs.Add(c);
+                    }
+                }
+
+                foreach (FieldInfo property in s)
+                {
+                    Lista.Add(property.ToString());
+                    if (property.GetValue(obj) is IEnumerable)
+                        foreach (var item in (IEnumerable)property.GetValue(obj))
+                        {
+                            TreeNode c = new TreeNode(property.ToString(), item.ToString());
+                            node.Childs.Add(c);
+                            //do stuff
+                            Lista.Add("      IenStart           " + item.ToString());
+                            Lista2(item,c);
+                            Lista.Add("      Ienkoniec          "+item.ToString());
+                            //lista.Add(item.ToString());
+                            // MessageBox.Show(item.ToString());
+
+                        }
+                    else
+                    {
+                        TreeNode c = new TreeNode(property.ToString(),null);
+                        Lista.Add(property.ToString() + "          NotIenumerable           ");
+                        Lista2(property,c);
+                       
+                    }
+
+                }
+                Lista.Add(strk);
+
+            }
+
+            return d;
+
+
+        }
+        private RelayCommand _commandopen;
+        private RelayCommand _commandsave;
+        private RelayCommand _commandload;
+        public RelayCommand CommandLoad
+        {
+            get
+            {
+                return _commandload ?? (_commandload = new RelayCommand(
+                   x =>
+                   {
+                       Load();
+                   }));
+            }
+
+        }
+        public RelayCommand CommandSave
+        {
+            get
+            {
+                return _commandsave ?? (_commandsave = new RelayCommand(
+                   x =>
+                   {
+                       Save();
+                   }));
+            }
+
+        }
+        public RelayCommand CommandOpen
+        {
+            get
+            {
+                return _commandopen ?? (_commandopen = new RelayCommand(
+                   x =>
+                   {
+                      MyAction();
+                   }));
+            }
+
+        }
+
+    
+    private void MyAction()
+        {
+           
+            Nullable<bool> result = Dlg.ShowDialog();
+
+            // Process open file dialog box results
+            if (result == true)
+            {
+                GreatParent = new ObservableCollection<TreeNode>();
+                GreatParent.Add(new TreeNode("Parent", "None"));
+                // Open document
+                ChosenFileName = Dlg.FileName;
+                MessageBox.Show(ChosenFileName);
+                Go(ChosenFileName);
+            }
+           
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        virtual protected void OnPropertyChanged(string propName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+        }
+    }
+}

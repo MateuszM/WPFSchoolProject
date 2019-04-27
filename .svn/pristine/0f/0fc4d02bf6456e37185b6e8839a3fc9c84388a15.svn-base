@@ -1,0 +1,42 @@
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ConsoleApp1;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Tpa3.Models;
+
+namespace ConsoleApp1.Tests
+{
+    [TestClass()]
+    public class SecondViewModelChTests
+    {
+        [TestMethod()]
+        public void SecondViewModelChTest()
+        {
+
+        }
+
+        [TestMethod()]
+        public void DisplayTest()
+        {
+            //Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void Lista2Test()
+        {
+            String d = "Nie mam pojęcia";
+            List<TreeNode> _GreatParent = new List<TreeNode>();
+            TreeNode l = new TreeNode();
+            SecondViewModelCh s = new SecondViewModelCh();
+            List<String> lista = new List<string>();
+            lista = s.Lista2(d, l);
+            Assert.AreEqual(l.Value, d);
+           
+
+
+        }
+    }
+    }

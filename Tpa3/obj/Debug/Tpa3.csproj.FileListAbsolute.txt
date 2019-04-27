@@ -1,0 +1,105 @@
+E:\MyProjects\Tpa3\Tpa3\obj\Debug\MainWindow.g.cs
+E:\MyProjects\Tpa3\Tpa3\obj\Debug\App.g.cs
+E:\MyProjects\Tpa3\Tpa3\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\MyProjects\Tpa3\Tpa3\obj\Debug\Tpa3_MarkupCompile.cache
+E:\MyProjects\Tpa3\Tpa3\obj\Debug\Tpa3_MarkupCompile.lref
+E:\MyProjects\Tpa3\Tpa3\obj\Debug\App.baml
+E:\MyProjects\Tpa3\Tpa3\obj\Debug\Tpa3.exe
+E:\MyProjects\Tpa3\Tpa3\obj\Debug\Tpa3.pdb
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\Tpa3.exe.config
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\Tpa3.exe
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\Tpa3.pdb
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.dll
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\System.Windows.Interactivity.dll
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.pdb
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.xml
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\MyProjects\Tpa3\Tpa3\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\MyProjects\Tpa3\Tpa3\obj\Debug\MainWindow.baml
+E:\MyProjects\Tpa3\Tpa3\obj\Debug\Tpa3.g.resources
+E:\MyProjects\Tpa3\Tpa3\obj\Debug\Tpa3.Properties.Resources.resources
+E:\MyProjects\Tpa3\Tpa3\obj\Debug\Tpa3.csproj.GenerateResource.Cache
+E:\MyProjects\Tpa3\Tpa3\obj\Debug\Tpa3.csproj.CoreCompileInputs.cache
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\Tpa3.exe.config
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\Tpa3.exe
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\Tpa3.pdb
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\EntityFramework.dll
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\EntityFramework.SqlServer.dll
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.dll
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\System.Windows.Interactivity.dll
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\EntityFramework.xml
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\EntityFramework.SqlServer.xml
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.pdb
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.xml
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\MyProjectsC#\Tpa3\Tpa3\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\MainWindow.g.cs
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\App.g.cs
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\Tpa3_MarkupCompile.cache
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\Tpa3_MarkupCompile.lref
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\App.baml
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\MainWindow.baml
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\Tpa3.g.resources
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\Tpa3.Migrations.init.resources
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\Tpa3.Migrations.init1.resources
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\Tpa3.Migrations.init2.resources
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\Tpa3.Migrations.init3.resources
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\Tpa3.Properties.Resources.resources
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\Tpa3.csproj.GenerateResource.Cache
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\Tpa3.csproj.CoreCompileInputs.cache
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\Tpa3.exe
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\Tpa3.pdb
+E:\MyProjectsC#\Tpa3\Tpa3\obj\Debug\Tpa3.csprojResolveAssemblyReference.cache
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\Tpa3.exe.config
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\Tpa3.exe
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\Tpa3.pdb
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\EntityFramework.dll
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\EntityFramework.SqlServer.dll
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\GalaSoft.MvvmLight.dll
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\System.Windows.Interactivity.dll
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\EntityFramework.xml
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\EntityFramework.SqlServer.xml
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\GalaSoft.MvvmLight.pdb
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\GalaSoft.MvvmLight.xml
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\C#\MyProjectsC#\New folder\Tpa3\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\Tpa3.csprojResolveAssemblyReference.cache
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\MainWindow.g.cs
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\App.g.cs
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\Tpa3_MarkupCompile.cache
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\Tpa3_MarkupCompile.lref
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\App.baml
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\MainWindow.baml
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\Tpa3.g.resources
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\Tpa3.Migrations.init.resources
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\Tpa3.Migrations.init1.resources
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\Tpa3.Migrations.init2.resources
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\Tpa3.Migrations.init3.resources
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\Tpa3.Properties.Resources.resources
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\Tpa3.csproj.GenerateResource.Cache
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\Tpa3.csproj.CoreCompileInputs.cache
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\Tpa3.exe
+E:\C#\MyProjectsC#\New folder\Tpa3\obj\Debug\Tpa3.pdb

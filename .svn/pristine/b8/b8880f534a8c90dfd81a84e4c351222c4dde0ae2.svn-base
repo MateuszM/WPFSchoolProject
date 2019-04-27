@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tpa3.Loggers
+{
+   public class Trace :ILogger
+    {
+        private static TraceSource mySource = new TraceSource("TraceSourceApp");
+
+
+        public void WriteFormattedLog()
+        {
+            mySource.TraceEvent(TraceEventType.Error, 1,
+                      "Error message.");
+            mySource.TraceEvent(TraceEventType.Warning, 2,
+                "Warning message.");
+        }
+       public  void Fatal()
+        {
+            mySource.TraceEvent(TraceEventType.Critical, 3,
+                "Critical message.");
+            mySource.TraceInformation("Informational message.");
+        }
+       public  void Error()
+        {
+            mySource.TraceEvent(TraceEventType.Error, 4,
+                "Error message.");
+            mySource.TraceInformation("Informational message.");
+        }
+    }
+}
+

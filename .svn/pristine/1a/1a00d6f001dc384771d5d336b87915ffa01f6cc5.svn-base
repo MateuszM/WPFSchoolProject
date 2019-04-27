@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tpa3.Models
+{
+   public class TreeNode
+    {
+        public TreeNode()
+        {
+
+        }
+        public TreeNode(String value,String typeName)
+        {
+            this.Childs = new List<TreeNode>();
+            this.Value = value;
+            this.TypeName = typeName;
+        }
+
+
+        public List<TreeNode> Childs { get; private set; }
+        public String Value { get; private set; }
+        public String TypeName { get; private set; }
+    }
+
+}

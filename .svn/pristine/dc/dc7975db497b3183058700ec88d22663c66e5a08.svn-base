@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Tpa3.Models;
+using Tpa3.ViewModel;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Display(List<string> a)
+        {
+            foreach (string d in a)
+                Console.WriteLine(d);
+        }
+        static void Display(List<TreeNode> s)
+        {
+            foreach (TreeNode d in s)
+                Console.WriteLine(d.Value);
+        }
+
+        static void Main(string[] args)
+        {
+            SecondViewModelCh d = new SecondViewModelCh();
+            Display(d.lista);
+            do
+            {
+                Ks(d.GreatParent, true,space);
+            }
+            while (!Console.KeyAvailable);
+            //   Console.ReadLine();
+
+        }
+       static String space = "";
+        public static bool Ks(List<TreeNode> d,bool first,string space)
+        {
+            String addspace = "     ";
+            space = addspace + space;
+           
+                if (Console.ReadKey(true).Key == ConsoleKey.UpArrow)
+                {
+                   
+                        
+                        //Display(d);
+                        foreach (TreeNode s in d)
+                    {
+                            Console.WriteLine(space+s.TypeName);
+                            Console.WriteLine(space+s.Value);
+                            Ks(s.Childs, false,space);
+                    }
+               // Console.WriteLine("                             back");
+                }
+                if (Console.ReadKey(true).Key == ConsoleKey.DownArrow)
+                {
+                
+                }
+           
+            return false;
+        }
+       
+    }
+}

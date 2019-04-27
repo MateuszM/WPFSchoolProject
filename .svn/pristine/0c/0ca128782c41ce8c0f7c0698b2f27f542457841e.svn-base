@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Serialization;
+using Tpa3.Models;
+
+namespace Tpa3.Logic
+{
+   public class DatabaseLogic
+    {
+        public DatabaseLogic(AssemblyMetadata user)
+        {
+            InsertClassObjectIntoSQLTable(1, user);
+        }
+       public static void InsertClassObjectIntoSQLTable(int userID, AssemblyMetadata userDetail)
+        {
+            using (SqlConnection sqlconnection = new SqlConnection(new DataContext().Database.Connection.ConnectionString))
+            {
+                sqlconnection.Open();
+
+                // create table if not exists 
+                string createTableQuery = @"Create Table [UserTable] (ID int, [UserObject] xml)";
+                SqlCommand command = new SqlCommand(createTableQuery, sqlconnection);
+                command.ExecuteNonQuery();
+
+                // Convert C# class object into xml string 
+                string xmlData = ConvertObjectToXMLString(userDetail);
+
+                string insertQuery = @"Insert Into [UserTable] (ID,[UserObject])
+                                                 Values(1,@UserObject)";
+
+                // Insert XMl Value into Sql Table by SqlParameter
+                SqlCommand insertCommand = new SqlCommand(insertQuery, sqlconnection);
+                SqlParameter sqlParam = insertCommand.Parameters.AddWithValue("@UserObject", xmlData);
+                sqlParam.DbType = DbType.Xml;
+                insertCommand.ExecuteNonQuery();
+            }
+        }
+
+      public  static string ConvertObjectToXMLString(object classObject)
+        {
+            string xmlString = null;
+            XmlSerializer xmlSerializer = new XmlSerializer(classObject.GetType());
+            using (System.IO.MemoryStream memoryStream = new MemoryStream())
+            {
+                xmlSerializer.Serialize(memoryStream, classObject);
+                memoryStream.Position = 0;
+                xmlString = new StreamReader(memoryStream).ReadToEnd();
+            }
+            return xmlString;
+        }
+    }
+}
+    

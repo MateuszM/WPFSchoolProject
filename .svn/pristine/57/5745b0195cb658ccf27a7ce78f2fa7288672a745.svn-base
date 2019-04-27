@@ -1,0 +1,201 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using Tpa3.Models;
+
+namespace Tpa3.ViewModel
+{
+    public class SecondViewModel : INotifyPropertyChanged 
+    {
+       // Assembly assembly;
+        AssemblyMetadata AMetadata;
+        List<String> _lista = new List<string>();
+        public List<String> lista
+        {
+            get { return _lista; }
+            set { _lista = value;
+                OnPropertyChanged("lista");
+            }
+        }
+        Logger logger = new Logger();
+        public SecondViewModel()
+        {
+            GreatParent = new List<TreeNode>();
+            GreatParent.Add(new TreeNode("Parent", "None"));
+            try
+            {
+                logger.Trace("Start of SecondViewModel Constructor");
+                AMetadata = new AssemblyMetadata(Assembly.LoadFile(@"E:\MyProjects\Tpa3\Tpa3\GalaSoft.MvvmLight.dll"));
+                foreach (NamespaceMeta d in AMetadata.m_Namespaces)
+                {
+                    Lista2(d, GreatParent[0]);
+                }
+            }
+            catch(Exception i)
+            {
+                logger.Error(i.ToString());
+            }
+        }
+        
+        public List<String> Lista1(Object obj)
+        {
+
+            List<String> d = new List<String>();
+            foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(obj))
+            {
+                if (property.PropertyType.GetInterfaces().Contains(typeof(IEnumerable))&& property.PropertyType!=typeof(String))
+                {
+                  if(property.GetValue(obj) is IEnumerable)
+                    foreach (var item in (IEnumerable)property.GetValue(obj))
+                    {
+                        //do stuff
+                        
+                        d.Add(item.ToString());
+                        MessageBox.Show(item.ToString());
+                        
+                    }
+                } //obj.GetType().
+            }
+
+            return d;
+
+
+        }
+        TreeView tre = new TreeView();
+        List<TreeNode> _GreatParent;
+        public List<TreeNode> GreatParent
+        {
+            get { return _GreatParent; }
+           set {
+                _GreatParent = value;
+                OnPropertyChanged("GreatParent");
+            }
+        }
+        
+        public List<String> Lista2(Object obj,TreeNode node)
+        {
+          
+            List<String> d = new List<String>();
+            if (obj != null)
+            {
+                TreeNode k = new TreeNode();
+                Type p = obj.GetType();
+                FieldInfo[] s = p.GetFields();
+                String str = "     Start          " + obj.ToString();
+                String strk ="     Koniec        " + obj.ToString();
+                
+                lista.Add(str);
+                foreach (var prop in obj.GetType().GetProperties())
+                {
+                  
+                    lista.Add(prop.ToString());
+                    if (prop.GetValue(obj) != null)
+                    {
+
+                         lista.Add(prop.GetValue(obj).ToString());
+                        TreeNode c = new TreeNode(prop.GetValue(obj).ToString(), prop.ToString());
+                       node.Childs.Add(c);
+                    }
+                }
+
+                foreach (FieldInfo property in s)
+                {
+                    lista.Add(property.ToString());
+                    if (property.GetValue(obj) is IEnumerable)
+                        foreach (var item in (IEnumerable)property.GetValue(obj))
+                        {
+                            TreeNode c = new TreeNode(property.ToString(), item.ToString());
+                            node.Childs.Add(c);
+                            //do stuff
+                            lista.Add("      IenStart           " + item.ToString());
+                            Lista2(item,c);
+                            lista.Add("      Ienkoniec          "+item.ToString());
+                            //lista.Add(item.ToString());
+                            // MessageBox.Show(item.ToString());
+
+                        }
+                    else
+                    {
+                        TreeNode c = new TreeNode(property.ToString(),null);
+                        lista.Add(property.ToString() + "          NotIenumerable           ");
+                        Lista2(property,c);
+                       
+                    }
+
+                }
+                lista.Add(strk);
+
+            }
+
+            return d;
+
+
+        }
+        public List<String> T (Object obj)
+        {
+
+            List<String> d = new List<string>();
+            Type S = obj.GetType();
+            
+            PropertyInfo[] properties = S.GetProperties();
+
+            foreach (PropertyInfo property in properties)
+            {
+              
+                //MessageBox.Show(property.ToString());
+                d.Add(property.ToString());
+                
+                // d.Add(property.);
+                object propValue = property.GetValue(obj, null);
+                var elems = propValue as IList;
+                if (elems != null)
+                {
+                    foreach (var item in elems)
+                    {
+                        MessageBox.Show(item.ToString());
+                    }
+                }
+                else
+                {
+                    // This will not cut-off System.Collections because of the first check
+                    if (property.PropertyType.Assembly == S.Assembly)
+                    {
+                        MessageBox.Show("Nic");
+                    }
+                    else
+                    {
+                        if(propValue!=null)
+                        MessageBox.Show(propValue.ToString());
+                    }
+                }
+            }
+
+            foreach (var prop in obj.GetType().GetProperties())
+            {
+              //  MessageBox.Show(prop.ToString());
+            }
+          
+
+
+            return d;
+                
+
+            
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        virtual protected void OnPropertyChanged(string propName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+        }
+    }
+}

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tpa3", "Tpa3\Tpa3.csproj", "{4FC8872E-974B-4607-A144-6B5EDD58F28C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{631D5D42-A68F-42E8-9A1D-031E49AD95EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{E228C5AF-4E3B-4C45-8A53-8BC7778BD969}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FC8872E-974B-4607-A144-6B5EDD58F28C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FC8872E-974B-4607-A144-6B5EDD58F28C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FC8872E-974B-4607-A144-6B5EDD58F28C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FC8872E-974B-4607-A144-6B5EDD58F28C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{631D5D42-A68F-42E8-9A1D-031E49AD95EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{631D5D42-A68F-42E8-9A1D-031E49AD95EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{631D5D42-A68F-42E8-9A1D-031E49AD95EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{631D5D42-A68F-42E8-9A1D-031E49AD95EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E228C5AF-4E3B-4C45-8A53-8BC7778BD969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E228C5AF-4E3B-4C45-8A53-8BC7778BD969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E228C5AF-4E3B-4C45-8A53-8BC7778BD969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E228C5AF-4E3B-4C45-8A53-8BC7778BD969}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F406A3BB-1416-44FF-A532-04EFCEE78898}
+	EndGlobalSection
+EndGlobal

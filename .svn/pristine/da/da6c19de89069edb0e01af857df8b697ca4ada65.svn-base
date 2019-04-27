@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Reflection;
+
+namespace Tpa3.Models
+{
+    public class PropertyMetadata
+    {
+
+       public static IEnumerable<PropertyMetadata> EmitProperties(IEnumerable<PropertyInfo> props)
+        {
+            return from prop in props
+                   where prop.GetGetMethod().GetVisible() || prop.GetSetMethod().GetVisible()
+                   select new PropertyMetadata(prop.Name, TypeMetadata.EmitReference(prop.PropertyType));
+        }
+
+        #region private
+        private string m_Name;
+        public String Name
+        {
+            get { return m_Name; }
+            set { m_Name = value; }
+        }
+        public TypeMetadata m_TypeMetadata;
+        private PropertyMetadata(string propertyName, TypeMetadata propertyType)
+        {
+            m_Name = propertyName;
+            m_TypeMetadata = propertyType;
+        }
+        #endregion
+
+    }
+}
+
